@@ -1,0 +1,959 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Portfolio of Mac Syrel Calago — aspiring web developer and AI & automation enthusiast.">
+<title>Mac Syrel Calago | Portfolio</title>
+
+<style>
+:root {
+  --navy: #102a43;
+  --blue: #245a91;
+  --sky: #eaf3fb;
+  --ink: #172b4d;
+  --muted: #62748a;
+  --line: #dce5ee;
+  --white: #fff;
+  --bg: #f7f9fc;
+  --accent: #f29d38;
+  --shadow: 0 18px 45px rgba(16,42,67,.09);
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  font-family: Inter, "Segoe UI", Arial, sans-serif;
+  color: var(--ink);
+  background: var(--bg);
+  line-height: 1.65;
+}
+
+a { color: inherit; text-decoration: none; }
+
+.container {
+  width: min(1120px, calc(100% - 40px));
+  margin: auto;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: rgba(255,255,255,.94);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--line);
+}
+
+.nav {
+  min-height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.brand {
+  font-weight: 800;
+  letter-spacing: -.4px;
+  color: var(--navy);
+  font-size: 1.05rem;
+}
+
+.brand span { color: var(--accent); }
+
+nav {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  font-size: .9rem;
+  color: #42566e;
+}
+
+nav a:hover { color: var(--blue); }
+
+.menu-button {
+  display: none;
+  border: 1px solid var(--line);
+  background: white;
+  border-radius: 9px;
+  padding: 8px 11px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.hero {
+  padding: 94px 0 82px;
+  background:
+    radial-gradient(circle at 82% 18%, #dcecf9 0, transparent 28%),
+    linear-gradient(135deg,#f7fbff 0%,#eef4fa 100%);
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.35fr .65fr;
+  gap: 50px;
+  align-items: center;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  color: var(--blue);
+  background: #e3eff9;
+  border: 1px solid #d4e5f4;
+  padding: 7px 13px;
+  border-radius: 999px;
+  font-size: .78rem;
+  font-weight: 700;
+  letter-spacing: .5px;
+  text-transform: uppercase;
+}
+
+.dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #29a36a;
+}
+
+h1 {
+  color: var(--navy);
+  font-size: clamp(2.6rem, 6vw, 4.7rem);
+  line-height: 1.06;
+  letter-spacing: -2.8px;
+  margin: 22px 0 18px;
+}
+
+h1 span { color: var(--blue); }
+
+.hero p {
+  color: #52677e;
+  font-size: 1.1rem;
+  max-width: 650px;
+  margin: 0 0 28px;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 19px;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: .92rem;
+  transition: .2s;
+}
+
+.btn-primary {
+  background: var(--blue);
+  color: white;
+  box-shadow: 0 8px 18px rgba(36,90,145,.2);
+}
+
+.btn-primary:hover {
+  background: var(--navy);
+  transform: translateY(-2px);
+}
+
+.btn-outline {
+  border: 1px solid #bdcddd;
+  color: var(--navy);
+  background: white;
+}
+
+.btn-outline:hover {
+  border-color: var(--blue);
+  transform: translateY(-2px);
+}
+
+/* PROFILE PHOTO */
+
+.profile-card {
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  padding: 27px;
+  box-shadow: var(--shadow);
+  max-width: 410px;
+  justify-self: end;
+  width: 100%;
+}
+
+.avatar {
+  width: 136px;
+  height: 136px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center 30%;
+  display: block;
+  border: 4px solid #eaf3fb;
+  background: #fff;
+  box-shadow: 0 8px 20px rgba(16,42,67,.14);
+  margin-bottom: 20px;
+}
+
+.profile-card h3 {
+  margin: 0;
+  color: var(--navy);
+  font-size: 1.15rem;
+}
+
+.profile-card .role {
+  color: var(--muted);
+  font-size: .9rem;
+  margin: 4px 0 18px;
+}
+
+.mini-stat {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  border-top: 1px solid var(--line);
+  padding-top: 12px;
+  margin-top: 12px;
+  font-size: .88rem;
+}
+
+.mini-stat strong { color: var(--blue); }
+
+section { padding: 78px 0; }
+
+.section-head {
+  max-width: 680px;
+  margin-bottom: 32px;
+}
+
+.kicker {
+  color: var(--blue);
+  text-transform: uppercase;
+  letter-spacing: 1.4px;
+  font-size: .75rem;
+  font-weight: 800;
+}
+
+h2 {
+  color: var(--navy);
+  font-size: clamp(1.8rem,4vw,2.5rem);
+  letter-spacing: -1px;
+  line-height: 1.2;
+  margin: 8px 0 12px;
+}
+
+.section-head p, .about-copy {
+  color: var(--muted);
+  margin: 0;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: start;
+}
+
+.about-note {
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 24px;
+}
+
+.about-note h3 {
+  margin: 0 0 8px;
+  color: var(--navy);
+}
+
+.about-note p {
+  color: var(--muted);
+  margin: 0;
+}
+
+.skills { background: white; }
+
+.skill-grid {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 16px;
+}
+
+.skill {
+  border: 1px solid var(--line);
+  background: #fbfdff;
+  border-radius: 15px;
+  padding: 20px;
+}
+
+.skill .icon {
+  width: 38px;
+  height: 38px;
+  display: grid;
+  place-items: center;
+  background: var(--sky);
+  border-radius: 11px;
+  color: var(--blue);
+  font-weight: 800;
+  margin-bottom: 12px;
+}
+
+.skill h3 {
+  font-size: 1rem;
+  color: var(--navy);
+  margin: 0 0 5px;
+}
+
+.skill p {
+  color: var(--muted);
+  font-size: .88rem;
+  margin: 0;
+}
+
+.tag {
+  display: inline-block;
+  font-size: .72rem;
+  font-weight: 700;
+  padding: 4px 9px;
+  border-radius: 999px;
+  background: #edf2f7;
+  color: #52677e;
+  margin-top: 12px;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  gap: 18px;
+}
+
+.project {
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 23px;
+  transition: .2s;
+}
+
+.project:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow);
+}
+
+.project-top {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+.project-icon {
+  width: 46px;
+  height: 46px;
+  display: grid;
+  place-items: center;
+  border-radius: 13px;
+  background: var(--sky);
+  color: var(--blue);
+  font-weight: 800;
+  font-size: 1.15rem;
+}
+
+.status {
+  font-size: .7rem;
+  text-transform: uppercase;
+  letter-spacing: .5px;
+  font-weight: 800;
+  color: #8a5a13;
+  background: #fff3dc;
+  padding: 5px 9px;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+.status.active {
+  color: #176b4b;
+  background: #e3f5ec;
+}
+
+.project h3 {
+  color: var(--navy);
+  margin: 16px 0 7px;
+  font-size: 1.12rem;
+}
+
+.project p {
+  color: var(--muted);
+  font-size: .9rem;
+  margin: 0;
+}
+
+.project small {
+  display: block;
+  color: #718198;
+  margin-top: 13px;
+  font-weight: 600;
+}
+
+.journey {
+  background: var(--navy);
+  color: white;
+}
+
+.journey h2 { color: white; }
+
+.journey .section-head p { color: #c5d3e1; }
+
+.journey-grid {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 18px;
+}
+
+.journey-item {
+  border: 1px solid rgba(255,255,255,.18);
+  background: rgba(255,255,255,.06);
+  border-radius: 15px;
+  padding: 20px;
+}
+
+.journey-item strong {
+  color: #f7bd70;
+  display: block;
+  margin-bottom: 6px;
+}
+
+.journey-item span {
+  color: #d2deea;
+  font-size: .9rem;
+}
+
+.contact-box {
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  padding: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+  box-shadow: var(--shadow);
+}
+
+.contact-box p {
+  color: var(--muted);
+  margin: 0;
+}
+
+footer {
+  padding: 25px 0;
+  border-top: 1px solid var(--line);
+  color: #7a899a;
+  font-size: .82rem;
+}
+
+footer .container {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+/* MOBILE RESPONSIVE */
+
+@media (max-width: 760px) {
+  .hero { padding: 65px 0; }
+
+  .hero-grid, .about-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .profile-card {
+    justify-self: start;
+    max-width: 100%;
+  }
+
+  .skill-grid { grid-template-columns: repeat(2,1fr); }
+
+  .projects-grid { grid-template-columns: 1fr; }
+
+  .journey-grid { grid-template-columns: 1fr; }
+
+  .contact-box {
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 25px;
+  }
+
+  nav {
+    display: none;
+    position: absolute;
+    top: 71px;
+    left: 0;
+    right: 0;
+    background: white;
+    padding: 18px 22px;
+    border-bottom: 1px solid var(--line);
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  nav.open { display: flex; }
+
+  .menu-button { display: inline-block; }
+}
+
+@media (max-width: 440px) {
+  .skill-grid { grid-template-columns: 1fr; }
+  h1 { letter-spacing: -1.6px; }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="container nav">
+    <a class="brand" href="#home">MAC SYREL<span>.</span></a>
+
+    <button class="menu-button" id="menuButton"
+      aria-label="Open navigation" aria-expanded="false">☰</button>
+
+    <nav id="mainNav">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#journey">My Journey</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<!-- HOME / HERO -->
+
+<section class="hero" id="home">
+  <div class="container hero-grid">
+
+    <div>
+      <div class="eyebrow">
+        <span class="dot"></span>
+        Open to learning & opportunities
+      </div>
+
+      <h1>Hi, I'm <span>Mac Syrel Calago.</span></h1>
+
+      <p>
+        An aspiring web developer and AI & automation enthusiast
+        focused on learning how to build useful digital tools,
+        streamline everyday tasks, and solve real-world problems
+        through technology.
+      </p>
+
+      <div class="actions">
+        <a class="btn btn-primary" href="#projects">
+          Explore My Projects&nbsp; →
+        </a>
+
+        <a class="btn btn-outline" href="#contact">
+          Get in Touch
+        </a>
+      </div>
+    </div>
+
+    <aside class="profile-card">
+
+      <!-- KEEP YOUR PHOTO INSIDE THE IMAGES FOLDER -->
+      <img class="avatar"
+        src="images/profile-photo.png"
+        alt="Professional portrait of Mac Syrel Calago">
+
+      <h3>Mac Syrel Calago</h3>
+
+      <div class="role">
+        Aspiring Web Developer · Beginner Builder
+      </div>
+
+      <div class="mini-stat">
+        <span>Focus</span>
+        <strong>Web & Automation</strong>
+      </div>
+
+      <div class="mini-stat">
+        <span>Learning</span>
+        <strong>Full-stack Development</strong>
+      </div>
+
+      <div class="mini-stat">
+        <span>Work preference</span>
+        <strong>Remote · Part-time</strong>
+      </div>
+
+    </aside>
+  </div>
+</section>
+
+<!-- ABOUT ME -->
+
+<section id="about">
+  <div class="container">
+
+    <div class="section-head">
+      <div class="kicker">About me</div>
+      <h2>Learning by building practical solutions.</h2>
+    </div>
+
+    <div class="about-grid">
+
+      <p class="about-copy">
+        I am developing my skills in web development, digital systems,
+        spreadsheets, and automation. I enjoy exploring how technology
+        can make everyday processes more organized and efficient.
+
+        My current learning path includes HTML, CSS, JavaScript,
+        and the foundations of full-stack development, while I
+        continue building small projects to strengthen my
+        practical experience.
+      </p>
+
+      <div class="about-note">
+        <h3>What I'm working toward</h3>
+
+        <p>
+          Growing into a dependable remote team member who can
+          contribute to website projects, data organization,
+          spreadsheet workflows, and simple business or
+          community-focused digital solutions.
+
+          I value clear instructions, steady improvement,
+          and useful results.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+
+<section class="skills" id="skills">
+  <div class="container">
+
+    <div class="section-head">
+      <div class="kicker">Skills & learning</div>
+      <h2>Tools and areas I'm developing.</h2>
+
+      <p>
+        This section is intentionally honest about my current
+        learning stage. I will update it as I gain more
+        hands-on experience.
+      </p>
+    </div>
+
+    <div class="skill-grid">
+
+      <article class="skill">
+        <div class="icon">EX</div>
+        <h3>Microsoft Excel</h3>
+        <p>Basic spreadsheet skills; learning dashboards,
+        reporting, and workflow automation.</p>
+        <span class="tag">Basic · Developing</span>
+      </article>
+
+      <article class="skill">
+        <div class="icon">&lt;/&gt;</div>
+        <h3>HTML & CSS</h3>
+        <p>Learning the foundations of page structure,
+        styling, and responsive layouts.</p>
+        <span class="tag">Learning</span>
+      </article>
+
+      <article class="skill">
+        <div class="icon">JS</div>
+        <h3>JavaScript</h3>
+        <p>Building foundational programming knowledge
+        for interactive websites.</p>
+        <span class="tag">Learning</span>
+      </article>
+
+      <article class="skill">
+        <div class="icon">AI</div>
+        <h3>AI Tools & Automation</h3>
+        <p>Exploring AI-assisted workflows and practical
+        ways to automate repetitive tasks.</p>
+        <span class="tag">Exploring</span>
+      </article>
+
+      <article class="skill">
+        <div class="icon">DB</div>
+        <h3>Data & Databases</h3>
+        <p>Learning how applications store, organize,
+        and retrieve records.</p>
+        <span class="tag">Developing</span>
+      </article>
+
+      <article class="skill">
+        <div class="icon">UI</div>
+        <h3>Problem Solving</h3>
+        <p>Breaking down real-world needs into manageable
+        features and step-by-step tasks.</p>
+        <span class="tag">Project-based</span>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+
+<section id="projects">
+  <div class="container">
+
+    <div class="section-head">
+      <div class="kicker">Selected projects</div>
+      <h2>Ideas becoming useful digital tools.</h2>
+
+      <p>
+        Some projects are in active development; others are planned
+        learning projects. Status labels clarify what is currently built.
+      </p>
+    </div>
+
+    <div class="projects-grid">
+
+      <article class="project">
+        <div class="project-top">
+          <div class="project-icon">LCR</div>
+          <span class="status active">In development</span>
+        </div>
+
+        <h3>Local Civil Registrar Management System</h3>
+
+        <p>
+          An offline desktop application concept for encoding
+          and managing local birth, death, and marriage records,
+          with a focus on organized record keeping and printable forms.
+          Current development is focused on the birth-record module.
+        </p>
+
+        <small>Learning focus: Python · Tkinter · SQLite</small>
+      </article>
+
+      <article class="project">
+        <div class="project-top">
+          <div class="project-icon">₱</div>
+          <span class="status">Concept / prototype</span>
+        </div>
+
+        <h3>Personal Budget Planner</h3>
+
+        <p>
+          A personal finance app concept designed to help users
+          organize income and expenses, view budgets, and understand
+          spending in their selected currency.
+        </p>
+
+        <small>Learning focus: App building · UI design · Database concepts</small>
+      </article>
+
+      <article class="project">
+        <div class="project-top">
+          <div class="project-icon">QR</div>
+          <span class="status">Planned</span>
+        </div>
+
+        <h3>QR Code & Digital vCard System</h3>
+
+        <p>
+          A planned system where a QR code opens a public
+          digital profile and allows visitors to save contact
+          details as a vCard.
+        </p>
+
+        <small>Learning focus: JavaScript · React · Node.js</small>
+      </article>
+
+      <article class="project">
+        <div class="project-top">
+          <div class="project-icon">BIS</div>
+          <span class="status">Planned</span>
+        </div>
+
+        <h3>Barangay Information Management System</h3>
+
+        <p>
+          A planned information system concept for organizing
+          resident profiles and supporting common barangay
+          record-management workflows.
+        </p>
+
+        <small>Learning focus: Forms · Databases · Application design</small>
+      </article>
+
+      <article class="project">
+        <div class="project-top">
+          <div class="project-icon">XL</div>
+          <span class="status">Learning project</span>
+        </div>
+
+        <h3>Excel Dashboards & Automation</h3>
+
+        <p>
+          Exploring spreadsheet-based dashboards and automated
+          records for practical reporting and administrative tasks.
+        </p>
+
+        <small>Learning focus: Excel · Formulas · Data presentation</small>
+      </article>
+
+      <article class="project">
+        <div class="project-top">
+          <div class="project-icon">WEB</div>
+          <span class="status">Learning project</span>
+        </div>
+
+        <h3>Government & Community Website Concepts</h3>
+
+        <p>
+          Exploring modern, accessible website layouts for
+          local information, public services, and community updates.
+        </p>
+
+        <small>Learning focus: Web design · Responsive layouts · User experience</small>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- MY JOURNEY -->
+
+<section class="journey" id="journey">
+  <div class="container">
+
+    <div class="section-head">
+      <div class="kicker" style="color:#f7bd70">My journey</div>
+
+      <h2>Building skills one project at a time.</h2>
+
+      <p>
+        My current direction is to strengthen the fundamentals,
+        finish useful projects, and build a portfolio that
+        demonstrates real ability.
+      </p>
+    </div>
+
+    <div class="journey-grid">
+
+      <div class="journey-item">
+        <strong>01 · Strengthen foundations</strong>
+        <span>
+          Practice HTML, CSS, JavaScript, Excel, and programming
+          fundamentals through small exercises.
+        </span>
+      </div>
+
+      <div class="journey-item">
+        <strong>02 · Complete projects</strong>
+        <span>
+          Improve and document projects with screenshots,
+          clear features, and honest descriptions of my contribution.
+        </span>
+      </div>
+
+      <div class="journey-item">
+        <strong>03 · Grow professionally</strong>
+        <span>
+          Prepare for remote, part-time opportunities by improving
+          communication, problem solving, and practical delivery.
+        </span>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- CONTACT -->
+
+<section id="contact">
+  <div class="container">
+
+    <div class="contact-box">
+
+      <div>
+        <div class="kicker">Contact</div>
+        <h2>Let's connect.</h2>
+
+        <p>
+          Interested in collaborating, sharing feedback, or
+          discussing an entry-level opportunity?
+          I'd be glad to hear from you.
+        </p>
+      </div>
+
+      <div class="actions">
+        <a class="btn btn-primary"
+           href="https://mail.google.com/mail/?view=cm&fs=1&to=macsyrel1@gmail.com"
+           target="_blank"
+           rel="noopener noreferrer">
+          Email Me&nbsp; ↗
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+</main>
+
+<!-- FOOTER -->
+
+<footer>
+  <div class="container">
+    <span>
+      © <span id="year"></span> Mac Syrel Calago. All rights reserved.
+    </span>
+
+    <span>
+      Designed as a learning portfolio · Built with HTML, CSS & JavaScript
+    </span>
+  </div>
+</footer>
+
+<script>
+document.getElementById('year').textContent =
+  new Date().getFullYear();
+
+const menuButton = document.getElementById('menuButton');
+const nav = document.getElementById('mainNav');
+
+menuButton.addEventListener('click', () => {
+  const opened = nav.classList.toggle('open');
+
+  menuButton.setAttribute(
+    'aria-expanded',
+    String(opened)
+  );
+});
+
+nav.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', () => {
+    nav.classList.remove('open');
+    menuButton.setAttribute('aria-expanded', 'false');
+  });
+});
+</script>
+
+</body>
+</html>
